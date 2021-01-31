@@ -1,0 +1,33 @@
+{
+  "ignore": [
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts",
+    "src/**/*.spec.tsx",
+    "src/**/*.test.tsx",
+    "src/**/*.stories.tsx"
+  ],
+  "presets": [
+    "@babel/preset-typescript",
+    "@babel/preset-react",
+    [
+      "@babel/env",
+      {
+        "targets": {
+          "edge": "17",
+          "firefox": "60",
+          "chrome": "67",
+          "safari": "11.1"
+        },
+        "useBuiltIns": "usage",
+        "corejs": "3.6.5"
+      }
+    ],
+    [
+      "minify",
+      {
+        "keepFnName": false
+      }
+    ]
+  ],
+  "plugins": [ [ "styled-components", { "ssr": true, "displayName": true, "preprocess": false } ] ]
+}
